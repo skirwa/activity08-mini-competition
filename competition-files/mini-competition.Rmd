@@ -5,4 +5,33 @@ output: github_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidymodels)
+library(corrr)
 ```
+
+
+```{r}
+inventory <- readr::read_csv("inventory.csv")
+```
+
+```{r}
+#cor_inventory <- inventory %>%
+  #select(week, sold) %>%
+  #correlate()
+```
+
+```{r}
+#rplot(cor_inventory, colours = c("indianred2", "black", "skyblue1"))
+```
+
+```{r}
+dim(inventory)
+```
+
+
+Check for the number of unique products
+```{r}
+length(unique(inventory$item_no))
+```
+
+> We have 488 products
